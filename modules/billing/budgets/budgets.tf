@@ -6,6 +6,8 @@ variable "emails"            { default = [ "" ] }
 
 
 resource "aws_budgets_budget" "budget" {
+  for_each = var.services
+
   name              = var.name
   budget_type       = "COST"
   limit_amount      = var.limit_amount
@@ -13,9 +15,9 @@ resource "aws_budgets_budget" "budget" {
   time_period_start = var.period_start
   time_unit         = "MONTHLY"
 
-  #cost_filters = {
-  #  Service = "Amazon Elastic Compute Cloud - Compute"
-  #}
+  cost_filters = {
+    Service = lookup(local.aws_services, each.key)
+  }
 
   notification {
     comparison_operator        = "GREATER_THAN"

@@ -9,7 +9,7 @@ variable "period_start"      { }
 variable "perc_limit_notify" { }
 variable "emails"            { }
 
-module "task_definition" {
+module "budgets_test" {
     source = "github.com/NikoRozo/terraform-modules/modules/billing/budgets"
 
     name = var.name

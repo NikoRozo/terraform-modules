@@ -2,7 +2,7 @@ variable "name"              { default = "budget" }
 variable "limit_amount"      { default = "300"}
 variable "period_start"      { default = "2017-07-01_00:00" }
 variable "perc_limit_notify" { default = "80" }
-variable "emails"            { default = [ "" ] }
+variable "emails"            { }
 
 
 resource "aws_budgets_budget" "budget" {

@@ -5,6 +5,7 @@ provider "aws" {
 
 variable "name"              { }
 variable "limit_amount"      { }
+variable "period_start"      { }
 variable "perc_limit_notify" { }
 variable "emails"            { }
 

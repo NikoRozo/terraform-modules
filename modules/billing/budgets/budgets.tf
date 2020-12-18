@@ -8,7 +8,7 @@ variable "emails"            { default = [ "" ] }
 resource "aws_budgets_budget" "ec2" {
   name              = var.name
   budget_type       = "COST"
-  limit_amount      = var.name
+  limit_amount      = var.limit_amount
   limit_unit        = "USD"
   time_period_start = var.period_start
   time_unit         = "MONTHLY"

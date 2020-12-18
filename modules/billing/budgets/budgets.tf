@@ -5,7 +5,7 @@ variable "perc_limit_notify" { default = "80" }
 variable "emails"            { default = [ "" ] }
 
 
-resource "aws_budgets_budget" "ec2" {
+resource "aws_budgets_budget" "budget" {
   name              = var.name
   budget_type       = "COST"
   limit_amount      = var.limit_amount
